@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
-export function Header() {
+export async function Header() {
+  const { userId } = await auth();
+  const isSignedIn = !!userId;
+
   return (
     <header className="border-b w-full">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
@@ -37,8 +42,18 @@ export function Header() {
         </nav>
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <Button variant="ghost">Sign In</Button>
-          <Button>Get Started</Button>
+          {isSignedIn ? (
+            <UserButton afterSignOutUrl="/" />
+          ) : (
+            <>
+              <SignInButton mode="redirect">
+                <Button variant="ghost">Sign In</Button>
+              </SignInButton>
+              <SignUpButton mode="redirect">
+                <Button>Get Started</Button>
+              </SignUpButton>
+            </>
+          )}
         </div>
       </div>
     </header>

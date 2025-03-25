@@ -10,7 +10,7 @@ export default function Home() {
         
        
 
-        {/* Features Section */}
+        {/* Hero Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-primary/5 to-secondary/5">
           <div className="container mx-auto max-w-7xl">
             <div className="flex flex-col items-center text-center gap-10">
@@ -31,6 +31,28 @@ export default function Home() {
                   <Link href="/craft?tab=job">Create Job Post</Link>
                 </Button>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-7xl">
+            <h2 className="text-4xl font-bold text-center mb-16 tracking-tight text-foreground">
+              Why Choose Upcraft
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {features.map((feature, index) => (
+                <div key={index} className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                    <div className="w-8 h-8 text-primary">
+                      {feature.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
