@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 system_prompt.md
+.env
 /.pnp
 .pnp.*
 .yarn/*
