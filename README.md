@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Upcraft - AI-Powered Upwork Proposal Generator
+
+Upcraft is a specialized AI-powered tool designed to help Upwork users write compelling proposals and job descriptions. Built with modern web technologies, it helps freelancers save their connects by generating high-converting proposals and assists clients in creating effective job postings.
+
+## Features
+
+- 🤖 **AI-Powered Writing**: Generate tailored proposals and job descriptions using advanced AI
+- 💰 **Save Your Connects**: Ensure higher success rates with optimized proposals
+- ✨ **Best Practices Built-in**: Follow proven templates and strategies
+- 🔒 **User Authentication**: Secure account management with Clerk
+- 💾 **Proposal Management**: Save and organize your generated proposals
+- 🎨 **Modern UI**: Beautiful, responsive design using Tailwind CSS and Shadcn UI
+
+## Tech Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn UI
+- **Authentication**: Clerk
+- **Database**: PostgreSQL with Prisma ORM
+- **Deployment**: Vercel
+- **Typography**: Geist Font Family
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Node.js 18.17 or later
+- PostgreSQL database
+- npm or yarn package manager
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+GEMINI_API_KEY=
+
+#supabase
+
+SUPABASE_URL=
+SUPABASE_PRIVATE_KEY=optional
+SUPABASE_ANON_KEY=optional
+# Connect to Supabase via connection pooling with Supavisor.
+
+DATABASE_URL=""
+
+# Direct connection to the database. Used for migrations.
+DIRECT_URL=""
+
+
+#Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+CLERK_WEBHOOK_SECRET=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
+
+```
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/raheesahmed/upcraft.git
+cd upcraft
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up the database:
+
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/app` - Next.js app router pages and API routes
+- `/components` - Reusable UI components
+- `/lib` - Utility functions and configurations
+- `/prisma` - Database schema and client
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[MIT](LICENSE)
 
-## Deploy on Vercel
+## Support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For support, email support@upcraft.ai or open an issue in the repository.

@@ -427,7 +427,56 @@ export default function CraftPage() {
                   >
                     Copy to Clipboard
                   </Button>
-                  <Button className="flex-1 bg-primary hover:bg-accent text-primary-foreground">Download as PDF</Button>
+                  <Button 
+                    className="flex-1 bg-primary hover:bg-accent text-primary-foreground"
+                    onClick={async () => {
+                      const form = document.querySelector('form:last-of-type');
+                      if (form && generatedJobPost) {
+                        const formData = new FormData(form);
+                        const projectTitle = formData.get("project-title") as string;
+                        const projectDescription = formData.get("project-description") as string;
+                        const budget = formData.get("budget") as string;
+                        const duration = formData.get("duration") as string;
+
+                        if (!projectTitle || !projectDescription || !budget || !duration) {
+                          toast.error("Please fill in all required fields");
+                          return;
+                        }
+
+                        setLoading(true);
+                        try {
+                          const response = await fetch("/api/job-post", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                              projectTitle,
+                              projectDescription,
+                              budget,
+                              duration,
+                              previousJobPost: generatedJobPost,
+                              isRegeneration: true
+                            }),
+                          });
+
+                          if (!response.ok) {
+                            throw new Error("Failed to regenerate job post");
+                          }
+
+                          const data = await response.json();
+                          setGeneratedJobPost(data.jobPost);
+                          toast.success("Job post regenerated successfully!");
+                        } catch (error) {
+                          console.error("Error regenerating job post:", error);
+                          toast.error("Failed to regenerate job post. Please try again.");
+                        } finally {
+                          setLoading(false);
+                        }
+                      }
+                    }}
+                    disabled={!generatedJobPost || loading}
+                  >
+                    Regenerate Job Post
+                  </Button>
                 </div>
               </CardContent>
             </Card>
