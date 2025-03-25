@@ -45,24 +45,24 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.6 0.19 142); /* Upwork green #14a800 */
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.75 0.18 142); /* Lighter Upwork green #6fda44 */
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --background: #ffffff;
+  --foreground: #113b11;
+  --card: #f9f9f9;
+  --card-foreground: #113b11;
+  --popover: #ffffff;
+  --popover-foreground: #113b11;
+  --primary: #14a800;
+  --primary-foreground: #ffffff;
+  --secondary: #13544e;
+  --secondary-foreground: #ffffff;
+  --muted: #f0f0f0;
+  --muted-foreground: #666666;
+  --accent: #34b234;
+  --accent-foreground: #ffffff;
+  --destructive: #c92e82;
+  --border: rgba(20, 168, 0, 0.15);
+  --input: rgba(20, 168, 0, 0.1);
+  --ring: #14a800;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -79,37 +79,37 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.65 0.19 142); /* Upwork green in dark mode - brighter for visibility */
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.75 0.18 142); /* Lighter Upwork green #6fda44 */
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.65 0.19 142); /* Upwork green in dark mode */
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.75 0.18 142); /* Lighter Upwork green #6fda44 */
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #181818; /* Upwork dark background */
+  --foreground: #ffffff; /* Clean white text */
+  --card: #1e1e1e; /* Slightly lighter than background */
+  --card-foreground: #ffffff;
+  --popover: #242424; /* Elevated surface */
+  --popover-foreground: #ffffff;
+  --primary: #14a800; /* Upwork signature green */
+  --primary-foreground: #ffffff;
+  --secondary: #13544e; /* Upwork teal */
+  --secondary-foreground: #ffffff;
+  --muted: #2a2a2a;
+  --muted-foreground: #a1a1a1; /* Softer text */
+  --accent: #34b234; /* Upwork lighter green */
+  --accent-foreground: #ffffff;
+  --destructive: #c92e82; /* Upwork pink */
+  --border: rgba(255, 255, 255, 0.1); /* Subtle borders */
+  --input: rgba(255, 255, 255, 0.05);
+  --ring: #14a800; /* Upwork green for focus rings */
+  --chart-1: #14a800; /* Upwork brand colors for charts */
+  --chart-2: #086add;
+  --chart-3: #5d2de6;
+  --chart-4: #34b234;
+  --chart-5: #c92e82;
+  --sidebar: #1a1a1a; /* Slightly darker for sidebar */
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #14a800;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #34b234;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: rgba(20, 168, 0, 0.5);
 }
 
 @layer base {

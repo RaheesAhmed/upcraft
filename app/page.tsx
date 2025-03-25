@@ -1,70 +1,60 @@
 import Image from "next/image";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
+import  Link  from "next/link";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary">
+        
+       
+
+        {/* Features Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-primary/5 to-secondary/5">
           <div className="container mx-auto max-w-7xl">
-            <div className="flex flex-col items-center text-center gap-8">
-              <Logo showText={true} className="w-48 h-auto" />
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+            <div className="flex flex-col items-center text-center gap-10">
+              <Logo showText={true} className="w-52 h-auto" />
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground max-w-4xl">
                 Write Winning Upwork<br />
-                <span className="text-primary">Proposals with AI</span>
+                <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Proposals with AI</span>
               </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl">
+              <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
                 Generate tailored, high-converting Upwork proposals in seconds.
                 Save your connects and increase your success rate with AI-powered assistance.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  Generate Proposal
+              <div className="flex flex-col sm:flex-row gap-6 mt-6">
+                <Button asChild size="lg" className="bg-primary hover:bg-accent text-primary-foreground px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Link href="/craft">Generate Proposal</Link>
                 </Button>
-                <Button size="lg" variant="outline">
-                  Create Job Post
+                <Button asChild size="lg" variant="outline" className="border-primary hover:bg-primary/10 px-8 py-6 text-lg rounded-xl">
+                  <Link href="/craft?tab=job">Create Job Post</Link>
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto max-w-7xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Upcraft</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex flex-col items-center text-center p-6 rounded-lg bg-card hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 mb-4 text-primary">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         {/* Testimonials Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-primary/5 to-secondary/5">
           <div className="container mx-auto max-w-7xl">
-            <h2 className="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 tracking-tight text-foreground">What Our Users Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="p-6 rounded-lg bg-background shadow-sm">
-                  <p className="text-muted-foreground mb-4">"{testimonial.quote}"</p>
+                <div key={index} className="p-8 rounded-xl bg-card hover:shadow-lg transition-all duration-300 border border-border/50">
+                  <p className="text-lg text-foreground/90 mb-6 leading-relaxed italic">"{testimonial.quote}"</p>
                   <div className="flex items-center gap-4">
                     <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
-                      width={40}
-                      height={40}
+                      width={48}
+                      height={48}
                       className="rounded-full"
                     />
                     <div>
-                      <p className="font-semibold">{testimonial.name}</p>
+                      <p className="font-semibold text-foreground">{testimonial.name}</p>
                       <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>

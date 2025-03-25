@@ -50,7 +50,7 @@ Your top priority is to craft proposals that are sharp, client-centric, and comp
 
 export async function POST(request: Request) {
   try {
-    const { jobTitle, jobDescription, experience, rate, availability } = await request.json();
+    const { jobTitle, jobDescription, experience, rate, availability, clientName } = await request.json();
 
     const prompt = `Generate an Upwork proposal for the following job:
 
@@ -59,8 +59,9 @@ Job Description: ${jobDescription}
 My Experience: ${experience}
 Hourly Rate: $${rate}
 Availability: ${availability} hours/week
+Client Name: ${clientName || 'Not provided'}
 
-Please follow the system prompt guidelines to generate a compelling proposal.`;
+`;
 
     const chat = model.startChat({
       history: [
