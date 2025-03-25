@@ -2,10 +2,11 @@
 
 # dependencies
 /node_modules
-system_propmt.md
+system_prompt.md
 /.pnp
 .pnp.*
 .yarn/*
+.windsurfrules
 your_role.md
 !.yarn/patches
 !.yarn/plugins

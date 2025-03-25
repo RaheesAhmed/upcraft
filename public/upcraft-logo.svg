@@ -1,0 +1,14 @@
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: Shaft of the arrow -->
+  <rect x="40" y="40" width="20" height="40" fill="#6fda44" />
+  <!-- Icon: Arrowhead -->
+  <polygon points="50,20 40,40 60,40" fill="#14a800" />
+  <!-- Grid lines to suggest crafting/building -->
+  <line x1="40" y1="50" x2="60" y2="50" stroke="#14a800" stroke-width="1" />
+  <line x1="40" y1="60" x2="60" y2="60" stroke="#14a800" stroke-width="1" />
+  <line x1="40" y1="70" x2="60" y2="70" stroke="#14a800" stroke-width="1" />
+  <line x1="45" y1="40" x2="45" y2="80" stroke="#14a800" stroke-width="1" />
+  <line x1="55" y1="40" x2="55" y2="80" stroke="#14a800" stroke-width="1" />
+  <!-- Text: Upcraft -->
+  <text x="110" y="65" font-family="sans-serif" font-size="40" fill="#14a800">Upcraft</text>
+</svg>

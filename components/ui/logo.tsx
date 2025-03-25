@@ -10,8 +10,8 @@ export function Logo({ className = '', showText = true }: LogoProps) {
   return (
     <Link href="/" className={`flex items-center gap-2 ${className}`}>
       <Image
-        src="/gemma-ai-logo.svg"
-        alt="Gemma AI Logo"
+        src="/upcraft-logo.svg"
+        alt="Upcraft Logo"
         width={160}
         height={40}
         priority
