@@ -42,6 +42,7 @@ export default function CraftPage() {
           experience,
           rate,
           availability,
+          clientName: clientNameValue,
         }),
       });
 
@@ -156,9 +157,9 @@ export default function CraftPage() {
                   </div>
                   <Button className="w-full" size="lg" type="submit" disabled={loading}>
                     {loading ? (
-                      <div className="flex items-center gap-2">
-                        <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                        Generating...
+                      <div className="flex items-center justify-center gap-2">
+                        <div className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                        <span>Generating...</span>
                       </div>
                     ) : (
                       "Generate Proposal"
