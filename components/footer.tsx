@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
+
 
 export function Footer() {
   return (
     <footer className="border-t bg-background py-6">
-      <div className="container flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Upcraft. All rights reserved.
@@ -25,19 +25,9 @@ export function Footer() {
           </div>
         </div>
         <div className="flex items-center gap-4">
+          
           <Link 
-            href="https://twitter.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter">
-              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-            </svg>
-            <span className="sr-only">Twitter</span>
-          </Link>
-          <Link 
-            href="https://github.com" 
+            href="https://github.com/raheesahmed" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -48,7 +38,7 @@ export function Footer() {
             </svg>
             <span className="sr-only">GitHub</span>
           </Link>
-          <ThemeToggle />
+          
         </div>
       </div>
     </footer>

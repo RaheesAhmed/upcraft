@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
-import { Footer } from "@/components/ui/footer";
 
 export default function Home() {
   return (
@@ -75,7 +74,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
+     
     </div>
   );
 }
