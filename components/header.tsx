@@ -36,6 +36,7 @@ export async function Header() {
           <Link href="/templates" className="text-muted-foreground hover:text-foreground transition-colors">
             Templates
           </Link>
+          <Link href='/tos' className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
           <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
             Pricing
           </Link>
