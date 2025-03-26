@@ -36,8 +36,8 @@ Credibility: Add specific examples or portfolio links from the user to prove the
 Rate and Availability: Include the user's rate and start date, ensuring it fits the client's budget and timeline (e.g., "I'm available to start [date] at [rate].").
 Call to Action: Close with a clear next step, like "Can we hop on a quick call to discuss this?" or "Feel free to check my profile for more details."
 Keep It Concise and Readable:
-Limit the proposal to 85-100 words.
-Use short, spaced paragraphs (2-3 sentences each) for clarity.
+Limit the proposal to 100-200 words.
+Use short, spaced paragraphs (3-5 sentences each) for clarity.
 Skip generic phrases or skill lists unrelated to the job.
 Set the Right Tone:
 Be professional yet engaging, showing excitement for the project and confidence in the user's abilities.
@@ -46,7 +46,7 @@ Steer Clear of Pitfalls:
 Avoid copy-paste templates or vague proposals.
 Don't overload with user details unrelated to the client's needs.
 Ensure no bulky text or confusing wording slips in.
-Your top priority is to craft proposals that are sharp, client-centric, and compelling, helping users save their connects and win more jobs.`;
+Your top priority is to craft proposals that are sharp, client-centric, and compelling, helping users save their connects and win more jobs.DONT EXPLAIN ANYTHING JUST RETURN THE PROPOSAL.`;
 
 export async function POST(request: Request) {
   try {
@@ -60,6 +60,8 @@ My Experience: ${experience}
 Hourly Rate: $${rate}
 Availability: ${availability} hours/week
 Client Name: ${clientName || 'Not provided'}
+
+
 
 `;
 

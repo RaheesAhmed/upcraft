@@ -61,7 +61,8 @@ Your goal is to help clients create job posts that:
 - Attract qualified candidates
 - Set clear expectations
 - Stand out from similar postings
-- Lead to successful project outcomes`;
+- Lead to successful project outcomes
+DONT EXPLAIN ANYTHING JUST RETURN THE JOB POST.`;
 
 export async function POST(request: Request) {
   try {
