@@ -117,9 +117,9 @@ export async function Header() {
           ) : (
             <>
               <SignInButton mode="redirect">
-                <Button variant="ghost">Sign In</Button>
+                <Button variant="default" className="md:variant-ghost">Sign In</Button>
               </SignInButton>
-              <SignUpButton mode="redirect">
+              <SignUpButton mode="redirect" className="hidden md:block">
                 <Button>Get Started</Button>
               </SignUpButton>
             </>
