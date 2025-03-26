@@ -1,12 +1,16 @@
+"use client"
+
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useState } from "react";
 
 const plans = [
   {
     name: "Free",
     description: "Perfect for trying out Upcraft",
-    price: "0",
+    monthlyPrice: "0",
+    annualPrice: "0",
     features: [
       "5 AI-generated proposals per month",
       "Basic templates",
@@ -20,7 +24,8 @@ const plans = [
   {
     name: "Basic",
     description: "For growing freelancers",
-    price: "4.99",
+    monthlyPrice: "4.99",
+    annualPrice: "3.74",
     features: [
       "50 AI-generated proposals per month",
       "All premium templates",
@@ -36,7 +41,8 @@ const plans = [
   {
     name: "Pro",
     description: "For power users",
-    price: "9.99",
+    monthlyPrice: "9.99",
+    annualPrice: "7.49",
     features: [
       "Unlimited AI-generated proposals",
       "Everything in Basic",
@@ -52,6 +58,8 @@ const plans = [
 ];
 
 export default function Pricing() {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   return (
     <div className="container mx-auto px-4 py-16 min-h-screen">
       <div className="text-center max-w-3xl mx-auto mb-12">
@@ -60,8 +68,22 @@ export default function Pricing() {
           Choose the perfect plan for your freelancing journey. Save money on Upwork connects and win more clients.
         </p>
         <div className="inline-flex items-center gap-2 bg-muted p-1 rounded-lg mb-8">
-          <span className="px-4 py-2 bg-primary text-primary-foreground rounded-md">Monthly</span>
-          <span className="px-4 py-2 cursor-pointer hover:bg-muted-foreground/10">Annual (Save 25%)</span>
+          <button
+            onClick={() => setIsAnnual(false)}
+            className={`px-4 py-2 rounded-md transition-colors ${
+              !isAnnual ? 'bg-primary text-primary-foreground' : 'hover:bg-muted-foreground/10'
+            }`}
+          >
+            Monthly
+          </button>
+          <button
+            onClick={() => setIsAnnual(true)}
+            className={`px-4 py-2 rounded-md transition-colors ${
+              isAnnual ? 'bg-primary text-primary-foreground' : 'hover:bg-muted-foreground/10'
+            }`}
+          >
+            Annual (Save 25%)
+          </button>
         </div>
       </div>
 
@@ -79,8 +101,15 @@ export default function Pricing() {
               <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
               <CardDescription className="mt-2">{plan.description}</CardDescription>
               <div className="mt-4">
-                <span className="text-4xl font-bold">${plan.price}</span>
-                <span className="text-muted-foreground">/month</span>
+                <span className="text-4xl font-bold">
+                  ${isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                </span>
+                <span className="text-muted-foreground">/{isAnnual ? 'month' : 'month'}</span>
+                {isAnnual && plan.monthlyPrice !== "0" && (
+                  <div className="text-sm text-muted-foreground mt-1">
+                    Billed annually (${(parseFloat(plan.annualPrice) * 12).toFixed(2)}/year)
+                  </div>
+                )}
               </div>
             </CardHeader>
             <CardContent className="flex-grow">
@@ -112,7 +141,7 @@ export default function Pricing() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Card className="p-4">
-            <p className="font-medium">Pakistan/India/Bangaldesh</p>
+            <p className="font-medium">Pakistan/India/Bangladesh</p>
             <p className="text-primary">60% off</p>
           </Card>
           <Card className="p-4">
