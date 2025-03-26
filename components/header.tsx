@@ -33,13 +33,14 @@ export async function Header() {
           <Link href="/craft" className="text-muted-foreground hover:text-foreground transition-colors">
             Create Proposal
           </Link>
-          <Link href="/templates" className="text-muted-foreground hover:text-foreground transition-colors">
-            Templates
+          <Link href="/prompts" className="text-muted-foreground hover:text-foreground transition-colors">
+            Prompts
           </Link>
           <Link href='/tos' className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
           <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
             Pricing
           </Link>
+          <Link href='/blog' className='text-muted-foreground hover:text-foreground transition-colors'>Blog</Link>
         </nav>
         <div className="flex items-center space-x-4">
           <ThemeToggle />
