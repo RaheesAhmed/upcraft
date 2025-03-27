@@ -189,7 +189,7 @@ export default function CraftPage() {
                       required
                     />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="rate">Hourly Rate ($)</Label>
                       <Input
@@ -228,16 +228,18 @@ export default function CraftPage() {
                       placeholder="Enter client's name"
                     />
                   </div>
-                  <Button className="w-full bg-primary hover:bg-accent text-primary-foreground" size="lg" type="submit" disabled={loading}>
-                    {loading ? (
-                      <div className="flex items-center justify-center gap-2">
-                        <div className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                        <span>Generating...</span>
-                      </div>
-                    ) : (
-                      "Generate Proposal"
-                    )}
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button className="w-full sm:flex-1 bg-primary hover:bg-accent text-primary-foreground" size="lg" type="submit" disabled={loading}>
+                      {loading ? (
+                        <div className="flex items-center justify-center gap-2">
+                          <div className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                          <span>Generating...</span>
+                        </div>
+                      ) : (
+                        "Generate Proposal"
+                      )}
+                    </Button>
+                  </div>
                 </form>
               </CardContent>
             </Card>
@@ -265,17 +267,17 @@ export default function CraftPage() {
                     readOnly
                   />
                 )}
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
                     variant="outline" 
-                    className="flex-1 border-primary hover:bg-primary/10"
+                    className="w-full sm:flex-1 border-primary hover:bg-primary/10"
                     onClick={() => copyToClipboard(generatedProposal)}
                     disabled={!generatedProposal}
                   >
                     Copy to Clipboard
                   </Button>
                   <Button 
-                    className="flex-1 bg-primary hover:bg-accent text-primary-foreground"
+                    className="w-full sm:flex-1 bg-primary hover:bg-accent text-primary-foreground"
                     onClick={async () => {
                       const form = document.querySelector('form');
                       if (form && generatedProposal) {
@@ -361,7 +363,7 @@ export default function CraftPage() {
                       required
                     />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="budget">Budget Range ($)</Label>
                       <Input
@@ -418,17 +420,17 @@ export default function CraftPage() {
                     readOnly
                   />
                 )}
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
                     variant="outline" 
-                    className="flex-1 border-primary hover:bg-primary/10"
+                    className="w-full sm:flex-1 border-primary hover:bg-primary/10"
                     onClick={() => copyToClipboard(generatedJobPost)}
                     disabled={!generatedJobPost}
                   >
                     Copy to Clipboard
                   </Button>
                   <Button 
-                    className="flex-1 bg-primary hover:bg-accent text-primary-foreground"
+                    className="w-full sm:flex-1 bg-primary hover:bg-accent text-primary-foreground"
                     onClick={async () => {
                       const form = document.querySelector('form:last-of-type');
                       if (form && generatedJobPost) {
