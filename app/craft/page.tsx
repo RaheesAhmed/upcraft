@@ -477,7 +477,7 @@ export default function CraftPage() {
                     }}
                     disabled={!generatedJobPost || loading}
                   >
-                    Regenerate Job Post
+                    Regenerate Post
                   </Button>
                 </div>
               </CardContent>
